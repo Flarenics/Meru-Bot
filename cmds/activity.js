@@ -16,7 +16,10 @@ module.exports = {
    aliases: [],
    async execute(message, args) {
       if (message.author.id === "612440265327771678") {
-         message.client.user.setActivity(args.join(" "));
+         console.log(args[0]);
+         message.client.user.setActivity(args.slice(1, args.length).join(" "), {
+            type: args[0].toUpperCase(),
+         });
          message.reply({
             embeds: [
                embedGenerator(
