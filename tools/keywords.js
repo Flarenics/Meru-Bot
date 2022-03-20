@@ -23,6 +23,24 @@ module.exports = {
       }
       if (message.content.toLowerCase().includes("cops")) {
          message.react("<:MeruPolice:949651430376095825>");
+      }
+      if (message.content.toLowerCase().includes("stupid")) {
+         message.react("<a:meruToopidDrool:949646212083097620>");
+      }
+      if (message.content.toLowerCase().includes("idk")) {
+         message.react("<:shrug:949805821263495218>");
+      }
+      if (message.content.toLowerCase().includes("I don't know")) {
+         message.react("<:shrug:949805821263495218>");
+      }
+      if (message.content.toLowerCase().includes("I dont know")) {
+         message.react("<:shrug:949805821263495218>");
+      }
+      if (message.content.toLowerCase().includes("TOS")) {
+         message.react("<:monkaS:699387194468728852>");
+      }
+      if (message.content.toLowerCase().includes("Terms of service")) {
+         message.react("<:monkaS:699387194468728852>");
       } else return;
    },
 };
