@@ -1,8 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 
-const date = "Sunday 3/20";
+const date = "Monday 3/21";
 
-const dailyMessage = `Working on development of integration with a waifu API...`;
+const dailyMessage = `Who needs to integrate with waifu API... WHEN YOU CAN MAKE YOUR OWN WRAPPER????\n\nrun 'meru danbooru' to get a random sofe for work image from danbooru :)`;
 
 function embedGenerator(title, text) {
    return (embed = new MessageEmbed()

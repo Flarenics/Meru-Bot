@@ -12,11 +12,11 @@ const helpEmbed = new MessageEmbed()
    .addFields(
       {
          name: "Avatar",
-         value: "Retrieves the avatar of a mentioned user, or your own",
+         value: "Retrieves the avatar of a mentioned user, or your own.",
       },
       {
          name: "Ping",
-         value: "Displays current ping to Meru",
+         value: "Displays current ping to Meru.",
       },
       {
          name: "Roll",
@@ -24,15 +24,31 @@ const helpEmbed = new MessageEmbed()
       },
       {
          name: "Daily",
-         value: "Gives a daily message",
+         value: "Gives a daily message.",
       },
       {
          name: "Activity",
-         value: "Sets the bot's activity to your message",
+         value: "Sets the bot's activity to your message.",
       },
       {
          name: "Vibecheck",
-         value: "Checks your vibe",
+         value: "Checks your vibe.",
+      },
+      {
+         name: "Join",
+         value: "Joins your voice channel.",
+      },
+      {
+         name: "Play",
+         value: "Plays a YouTube video. Ex: Meru Play https://www.youtube.com/watch?v=h7MYJghRWt0",
+      },
+      {
+         name: "Leave",
+         value: "Kicks the bot from your current voice channel.",
+      },
+      {
+         name: "Danbooru",
+         value: "grabs a random safe for work image from danbooru",
       }
       // { name: "\u200B", value: "\u200B" }
    )

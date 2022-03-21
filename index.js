@@ -66,7 +66,7 @@ client.on("messageCreate", (message) => {
 
    //If Message doesn't contain Prefix or Bot mention, return
    const prefixRegex = new RegExp(
-      `^(<@!?${client.user.id}>|${escapeRegex("meru")})\\s*`
+      `(<@!?${client.user.id}>|${escapeRegex("meru")})\\s*`
    );
    if (!prefixRegex.test(message.content)) return;
 
@@ -85,8 +85,12 @@ client.on("messageCreate", (message) => {
 
    //If command doesn't exist output to console
    if (!command) {
+      // If message mentions bot, but isn't a command, react
+      if (message.content.includes(`<@!${client.user.id}>`)) {
+         message.react("<a:veryangysuccping:758865892301471774:>");
+      }
       console.log(
-         `❌ ${commandName} | ${message.author.tag} | ${
+         `❌ ${message.content} | ${message.author.tag} | ${
             message.channel.type === "DM" ? "DM" : message.guild.name
          } ❌`
       );

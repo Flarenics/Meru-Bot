@@ -16,7 +16,13 @@ module.exports = {
    aliases: [],
    async execute(message, args) {
       if (message.author.id === "612440265327771678") {
-         console.log(args[0]);
+         console.log(
+            `${message.author.tag} set status to: ${
+               args[0].toUpperCase() === "LISTENING"
+                  ? "Listening to"
+                  : args[0].toUpperCase()
+            } | ${args.slice(1, args.length).join(" ")}`
+         );
          message.client.user.setActivity(args.slice(1, args.length).join(" "), {
             type: args[0].toUpperCase(),
          });

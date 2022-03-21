@@ -41,6 +41,9 @@ module.exports = {
       }
       if (message.content.toLowerCase().includes("Terms of service")) {
          message.react("<:monkaS:699387194468728852>");
+      }
+      if (message.content.toLowerCase().includes("Terms of service")) {
+         message.react("<:monkaS:699387194468728852>");
       } else return;
    },
 };
