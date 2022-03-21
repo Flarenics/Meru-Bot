@@ -1,21 +1,28 @@
-# Welcome to Meru Bot!
+## About Meru
+***Meru Bot** is a **powerful Discord bot** that has commands made to **promote activity** in your Discord server.*
 
-**Meru Bot** is dogshit right now. *Under heavy development.*
+## More
+***Meru Bot** is a Discord bot centered around **fun commands** and **utility**. **Meru Bot** has commands to **join and play audio in voice chats**, **display user avatars**, and grab a random image from the Danbooru library serving over **5 million posts** and **162 million tags** to search with!*
 
-## Commands (too lazy to write desc rn)
+## Commands
+**ALL COMMANDS WILL ONLY WORK THROUGH THE PREFIX 'MERU' OR MENTIONING THE BOT**
 
-Activity
+**"Avatar"**: Retrieves the avatar of a mentioned user, or your own.
 
-Avatar
+**"Ping"**: Displays current ping to Meru.
 
-Daily
+**"Roll"**: Spin for a random emoji!
 
-Help
+**"Daily"**: Gives a daily message.
 
-Join
+**"Activity"**: Sets the bot's activity to your message.
 
-Ping
+**"Vibecheck"**: Checks your vibe.
 
-Roll
+**"Join"**: Joins your voice channel.
 
-Vibecheck	
+**"Play"**: Plays a YouTube video. Ex: Meru Play https://www.youtube.com/watch?v=h7MYJghRWt0"
+
+**"Leave"**: Kicks the bot from your current voice channel.
+
+**"Danbooru"**: Grabs a random safe for work image from danbooru
