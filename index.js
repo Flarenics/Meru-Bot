@@ -87,7 +87,7 @@ client.on("messageCreate", (message) => {
    if (!command) {
       // If message mentions bot, but isn't a command, react
       if (message.content.includes(`<@!${client.user.id}>`)) {
-         message.react("<a:veryangysuccping:758865892301471774:>");
+         message.react("C");
       }
       console.log(
          `❌ ${message.content} | ${message.author.tag} | ${
