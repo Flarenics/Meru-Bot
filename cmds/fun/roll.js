@@ -69,10 +69,14 @@ module.exports = {
    aliases: [],
    async execute(message) {
       let emoji = meruEmojiList[Math.floor(Math.random() * 64) - 1];
-      message.reply("<a:meruroller:953743760095854634>").then((msg) => {
-         setTimeout(function () {
-            msg.edit(emoji);
-         }, Math.floor(Math.random() * 7000));
-      });
+      try {
+         message.reply("<a:meruroller:955481121255219270>").then((msg) => {
+            setTimeout(function () {
+               msg.edit(emoji);
+            }, Math.floor(Math.random() * 7000));
+         });
+      } catch (err) {
+         console.log(err);
+      }
    },
 };
