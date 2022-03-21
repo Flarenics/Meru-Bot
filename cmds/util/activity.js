@@ -15,7 +15,7 @@ module.exports = {
    name: "activity",
    aliases: [],
    async execute(message, args) {
-      if (message.author.id === "612440265327771678") {
+      if (message.author.id === "612440265327771678" && args[2]) {
          console.log(
             `${message.author.tag} set status to: ${
                args[0].toUpperCase() === "LISTENING"
@@ -35,14 +35,24 @@ module.exports = {
             ],
          });
       } else {
-         message.reply({
-            embeds: [
-               embedGenerator(
-                  "Failed",
-                  `Only the developer can run this command.`
-               ),
-            ],
-         });
+         if (!args[2]) {
+            message.reply({
+               embeds: [
+                  embedGenerator("Failed", `Message must contain a string.`),
+               ],
+            });
+         } else {
+            if (!message.author.id === "612440265327771678") {
+               message.reply({
+                  embeds: [
+                     embedGenerator(
+                        "Failed",
+                        `Only the developer can run this command.`
+                     ),
+                  ],
+               });
+            }
+         }
       }
    },
 };

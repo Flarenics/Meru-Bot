@@ -60,11 +60,11 @@ client.on("messageCreate", (message) => {
    // Return if message is from bot or a DM
    if (message.author.bot) return;
 
-   try {
-      keywordCommand.messagefunc(message);
-   } catch (error) {
-      console.log(error);
-   }
+   //  try {
+   //     keywordCommand.messagefunc(message);
+   //  } catch (error) {
+   //     console.log(error);
+   //  }
 
    //If Message doesn't contain Prefix or Bot mention, return
    const prefixRegex = new RegExp(
