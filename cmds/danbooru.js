@@ -23,6 +23,7 @@ module.exports = {
          path: "/posts.json?limit=1&tags=rating:safe+1girl+random:1",
          method: "GET",
       };
+
       const req = https.get(options, (res) => {
          console.log(`statusCode: ${res.statusCode}`);
          let datastream = [];
@@ -45,7 +46,9 @@ module.exports = {
                console.log(JSON.parse(datastream.toString())[0].file_url);
             } catch (error) {
                console.log(error);
-               message.reply("Please wait!");
+               message.reply(
+                  "Please wait! Danbooru has problems with their API! expect this feature to work again soon:tm:!"
+               );
             }
          });
       });
