@@ -23,7 +23,7 @@ module.exports = {
          }
       }
       const options = {
-         hostname: "danbooru.donmai.us",
+         hostname: `danbooru.donmai.us`,
          port: 443,
          path: "/posts.json?limit=1&tags=rating:safe+1girl+random:1",
          method: "GET",
