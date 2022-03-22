@@ -75,7 +75,7 @@ client.on("messageCreate", (message) => {
 
    //If Message doesn't contain Prefix or Bot mention, return
    const prefixRegex = new RegExp(
-      `(<@!?${client.user.id}>|${escapeRegex("meru")})\\s*`
+      `(<@!?${client.user.id}>|${escapeRegex("md")})\\s*`
    );
    if (!prefixRegex.test(message.content)) return;
 
