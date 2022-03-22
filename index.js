@@ -71,7 +71,7 @@ client.on("messageCreate", (message) => {
    );
    if (!prefixRegex.test(message.content)) return;
 
-   
+
    // Slice message into useful variables
    const [, matchedPrefix] = message.content.match(prefixRegex);
    const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
@@ -86,7 +86,7 @@ client.on("messageCreate", (message) => {
 
    //If command doesn't exist output to console
    if (!command) {
-      // If message mentions bot, but isn't a command, react
+      // If message mentions bot, but isn't a command, reply with help 
       if (message.content.includes(`<@!${client.user.id}>`)) {
          message.reply("Hello! Use 'meru help' for a list of commands.");
       }
