@@ -10,7 +10,7 @@ const { VoiceConnectionStatus, entersState } = require("@discordjs/voice");
 
 module.exports = {
    async musicPlayer(message, videoId) {
-      //comfort variables
+      // variables
       const queue = message.client.queue.get(message.guildId);
       const videoInfo = await ytdl.getInfo(videoId);
 
@@ -51,28 +51,6 @@ module.exports = {
          console.log(err);
       }
 
-      //Debug and error handling stuff
-      // player.on("debug", (bla) => {
-      //    console.log("player debug : \n " + bla);
-      // });
-      // player.on("stateChange", (bli) => {
-      //    console.log(bli);
-      // });
-      // player.on("error", (err) => {
-      //    console.log("Player error \n : " + err);
-      // });
-      // stream.on("end", (asdf) => {
-      //    console.log("stream end : \n " + asdf);
-      // });
-      // stream.on("close", (asdf) => {
-      //    console.log("stream close : \n " + asdf);
-      // });
-      // stream.on("error", (asdf) => {
-      //    console.log("stream error : \n " + asdf);
-      // });
-      // stream.on("data", (data) => {
-      // 	console.log(data);
-      // });
 
       //If song finished, cycle to the next song
       player.on(AudioPlayerStatus.Idle, async () => {
@@ -96,10 +74,9 @@ module.exports = {
 
             let newResource = createAudioResource(
                ytdl(queue.songs[0].url, {
-                  filter: queue.songs[0].live ? null : "audioonly",
-                  quality: queue.songs[0].live ? null : "lowest",
-                  liveBuffer: 1000,
-                  highWaterMark: 1 << 25,
+                  filter: videoInfo.videoDetails.isLiveContent ? null : null,
+         quality: videoInfo.videoDetails.isLiveContent ? null : "highestaudio",
+         liveBuffer: 1000,
                   isHLS: queue.songs[0].live,
                }),
                {
@@ -142,9 +119,9 @@ module.exports = {
 
                let newResource = createAudioResource(
                   ytdl(queue.songs[0].url, {
-                     filter: queue.songs[0].live ? null : "audioonly",
-                     quality: queue.songs[0].live ? null : "highestaudio",
-                     liveBuffer: 1000,
+                     filter: videoInfo.videoDetails.isLiveContent ? null : null,
+         quality: videoInfo.videoDetails.isLiveContent ? null : "highestaudio",
+         liveBuffer: 1000,
                      isHLS: queue.songs[0].live,
                   }),
                   {
