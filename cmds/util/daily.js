@@ -1,8 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 
-const date = "Monday 3/21";
+const date = "Tuesday 3/22";
 
-const dailyMessage = `Trying to get on multiple bot listing sites...`;
+const dailyMessage = `Integrating with cloud hosting`;
 
 function embedGenerator(title, text) {
    return (embed = new MessageEmbed()
