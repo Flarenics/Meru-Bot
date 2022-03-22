@@ -52,24 +52,24 @@ module.exports = {
       }
 
       //Debug and error handling stuff
-      player.on("debug", (bla) => {
-         console.log("player debug : \n " + bla);
-      });
-      player.on("stateChange", (bli) => {
-         console.log(bli);
-      });
-      player.on("error", (err) => {
-         console.log("Player error \n : " + err);
-      });
-      stream.on("end", (asdf) => {
-         console.log("stream end : \n " + asdf);
-      });
-      stream.on("close", (asdf) => {
-         console.log("stream close : \n " + asdf);
-      });
-      stream.on("error", (asdf) => {
-         console.log("stream error : \n " + asdf);
-      });
+      // player.on("debug", (bla) => {
+      //    console.log("player debug : \n " + bla);
+      // });
+      // player.on("stateChange", (bli) => {
+      //    console.log(bli);
+      // });
+      // player.on("error", (err) => {
+      //    console.log("Player error \n : " + err);
+      // });
+      // stream.on("end", (asdf) => {
+      //    console.log("stream end : \n " + asdf);
+      // });
+      // stream.on("close", (asdf) => {
+      //    console.log("stream close : \n " + asdf);
+      // });
+      // stream.on("error", (asdf) => {
+      //    console.log("stream error : \n " + asdf);
+      // });
       // stream.on("data", (data) => {
       // 	console.log(data);
       // });

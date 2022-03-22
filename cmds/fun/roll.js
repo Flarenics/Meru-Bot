@@ -1,5 +1,6 @@
 const { Permissions } = require("discord.js");
 const bitPermissions = new Permissions(268550160n);
+const embeds = require("../../tools/embeds");
 
 const meruEmojiList = [
    `<:B_:699387192921030708>`,
@@ -53,10 +54,35 @@ module.exports = {
    name: "roll",
    aliases: [],
    async execute(message) {
+      if (message.channel.type === "DM") {
+         message.reply({
+            embeds: [embeds.errorEmbed("error!", "Unable to roll in DM's!")],
+         });
+         return;
+      }
+
+      // final permissions for a guild member using permissionsFor
+      const botPermissionsFor = message.channel.permissionsFor(
+         message.guild.me
+      );
+
+      // final permissions for a guild member using permissionsIn
+      const botPermissionsIn = message.guild.me.permissionsIn(message.channel);
+
+      // final permissions for a role
+      const rolePermissions = message.channel.permissionsFor(
+         message.author.role
+      );
+
       let emoji = meruEmojiList[Math.floor(Math.random() * 64) - 1];
-      if (
-         message.member.permissions.has(Permissions.FLAGS.USE_EXTERNAL_EMOJIS)
-      ) {
+      const channelPermissions = message.channel.permissionsFor(
+         message.guild.me,
+         true
+      );
+      console.log(
+         channelPermissions.has(Permissions.FLAGS.USE_EXTERNAL_EMOJIS)
+      );
+      if (channelPermissions.has(Permissions.FLAGS.USE_EXTERNAL_EMOJIS)) {
          try {
             message.reply("<a:meruroller:955481121255219270>").then((msg) => {
                setTimeout(function () {
@@ -67,6 +93,8 @@ module.exports = {
             console.log(err);
          }
       } else
-         message.reply("I do not not have permission to use external emojis!");
+         message.reply(
+            "I don't have permissions to use external emojis in this channel/server.\nplease give me the required permission or, re-invite me with proper permissions."
+         );
    },
 };

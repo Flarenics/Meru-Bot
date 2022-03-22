@@ -1,5 +1,7 @@
 const { MessageEmbed, MessageMentions } = require("discord.js");
 
+const defaultColor = 0xb63535;
+
 module.exports = {
    name: "avatar",
    aliases: [],
@@ -9,7 +11,7 @@ module.exports = {
       // response embed function
       function avatarEmbed(userObject) {
          return new MessageEmbed()
-            .setColor(userObject.accentColor.toString(16).toUpperCase())
+            .setColor(userObject.accentColor || defaultColor)
             .setImage(
                userObject.avatarURL({
                   format: userObject.avatar.startsWith("a") ? "gif" : "png",

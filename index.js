@@ -4,6 +4,7 @@ const { readdirSync } = require("fs");
 const { join } = require("path");
 const dotenv = require("dotenv").config();
 const fg = require("fast-glob");
+//const embeds = require("./tools/embeds");
 
 const client = new Client({
    partials: ["MESSAGE", "CHANNEL", "REACTION"],
@@ -36,7 +37,9 @@ client.once("ready", () => {
    console.log(
       `Logged in as ${client.user.tag} and Listening to ${client.guilds.cache.size} servers `
    );
-   client.user.setActivity("your DMs. Keep em' coming.", { type: "WATCHING" });
+   client.user.setActivity(`to ${client.guilds.cache.size} servers`, {
+      type: "LISTENING",
+   });
    client.user.setStatus("dnd");
 });
 
@@ -59,6 +62,10 @@ client.on("messageCreate", (message) => {
 
    // Return if message is from bot or a DM
    if (message.author.bot) return;
+   if (message.channel.type === "DM") {
+      message.reply("You can not run commands in a DM!");
+      return;
+   }
 
    //  try {
    //     keywordCommand.messagefunc(message);
@@ -89,7 +96,7 @@ client.on("messageCreate", (message) => {
    if (!command) {
       // If message mentions bot, but isn't a command, react
       if (message.content.includes(`<@!${client.user.id}>`)) {
-         message.react("<a:veryangysuccping:758865892301471774:>");
+         message.reply("Hello! Use 'meru help' for a list of commands.");
       }
       console.log(
          `❌ ${message.content} | ${message.author.tag} | ${

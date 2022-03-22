@@ -15,13 +15,24 @@ module.exports = {
    name: "activity",
    aliases: [],
    async execute(message, args) {
+      if (!message.author.id === "612440265327771678") {
+         message.reply({
+            embeds: [
+               embedGenerator(
+                  "Failed",
+                  `Only the developer can run this command.`
+               ),
+            ],
+         });
+      }
+
       if (message.author.id === "612440265327771678" && args[2]) {
          console.log(
             `${message.author.tag} set status to: ${
                args[0].toUpperCase() === "LISTENING"
                   ? "Listening to"
                   : args[0].toUpperCase()
-            } | ${args.slice(1, args.length).join(" ")}`
+            } | ${args.slice(1, args.length).join(" ")} | @Meru Bot help`
          );
          message.client.user.setActivity(args.slice(1, args.length).join(" "), {
             type: args[0].toUpperCase(),
@@ -38,20 +49,12 @@ module.exports = {
          if (!args[2]) {
             message.reply({
                embeds: [
-                  embedGenerator("Failed", `Message must contain a string.`),
+                  embedGenerator(
+                     "Failed",
+                     `Message must contain a valid string.`
+                  ),
                ],
             });
-         } else {
-            if (!message.author.id === "612440265327771678") {
-               message.reply({
-                  embeds: [
-                     embedGenerator(
-                        "Failed",
-                        `Only the developer can run this command.`
-                     ),
-                  ],
-               });
-            }
          }
       }
    },

@@ -1,10 +1,26 @@
 const { getVoiceConnection } = require("@discordjs/voice");
+const embeds = require("../../tools/embeds");
 
 module.exports = {
    name: "leave",
-   aliases: [],
+   aliases: ["disconnect"],
    async execute(message) {
+      if (message.channel.type === "DM") {
+         message.reply({
+            embeds: [
+               embeds.errorEmbed("error!", "Unable to play music in DM's!"),
+            ],
+         });
+         return;
+      }
       const connection = getVoiceConnection(message.guild.id);
-      connection.destroy();
+
+      if (connection) {
+         try {
+            connection.destroy();
+         } catch (err) {
+            console.log(err);
+         }
+      }
    },
 };
