@@ -77,10 +77,10 @@ client.on("messageCreate", (message) => {
    const prefixRegex = new RegExp(
       `(<@!?${client.user.id}>|${escapeRegex("meru")})\\s*`
    );
-   if (!prefixRegex.test(message.content)) return;
+   if (!prefixRegex.test(message.content.toLowerCase()) return;
 
    // Slice message into useful variables
-   const [, matchedPrefix] = message.content.match(prefixRegex);
+   const [, matchedPrefix] = message.content.toLowerCase().match(prefixRegex);
 
    const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
    const commandName = args.shift().toLowerCase();
