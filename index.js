@@ -57,31 +57,23 @@ for (const file of cmdFiles) {
 
 //on Message event
 client.on("messageCreate", (message) => {
-   //variables and functions
-   const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-
    // Return if message is from bot or a DM
    if (message.author.bot) return;
    if (message.channel.type === "DM") {
       message.reply("You can not run commands in a DM!");
       return;
    }
-
-   //  try {
-   //     keywordCommand.messagefunc(message);
-   //  } catch (error) {
-   //     console.log(error);
-   //  }
-
+   
    //If Message doesn't contain Prefix or Bot mention, return
+   const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
    const prefixRegex = new RegExp(
       `(<@!?${client.user.id}>|${escapeRegex("md")})\\s*`
    );
    if (!prefixRegex.test(message.content)) return;
 
+
    // Slice message into useful variables
    const [, matchedPrefix] = message.content.match(prefixRegex);
-
    const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
    const commandName = args.shift().toLowerCase();
 
@@ -94,7 +86,7 @@ client.on("messageCreate", (message) => {
 
    //If command doesn't exist output to console
    if (!command) {
-      // If message mentions bot, but isn't a command, react
+      // If message mentions bot, but isn't a command, reply with help 
       if (message.content.includes(`<@!${client.user.id}>`)) {
          message.reply("Hello! Use 'meru help' for a list of commands.");
       }
