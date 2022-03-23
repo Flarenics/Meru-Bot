@@ -63,20 +63,18 @@ client.on("messageCreate", (message) => {
       message.reply("You can not run commands in a DM!");
       return;
    }
-   
+
    //If Message doesn't contain Prefix or Bot mention, return
    const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
    const prefixRegex = new RegExp(
       `(<@!?${client.user.id}>|${escapeRegex("md")})\\s*`
    );
-   if (!prefixRegex.test(message.content)) return;
-
+   if (!prefixRegex.test(message.content.toLowerCase())) return;
 
    // Slice message into useful variables
-   const [, matchedPrefix] = message.content.match(prefixRegex);
+   const [, matchedPrefix] = message.content.toLowerCase().match(prefixRegex);
    const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
    const commandName = args.shift().toLowerCase();
-
    //Check if command exists
    const command =
       client.commands.get(commandName) ||
@@ -86,7 +84,7 @@ client.on("messageCreate", (message) => {
 
    //If command doesn't exist output to console
    if (!command) {
-      // If message mentions bot, but isn't a command, reply with help 
+      // If message mentions bot, but isn't a command, reply with help
       if (message.content.includes(`<@!${client.user.id}>`)) {
          message.reply("Hello! Use 'meru help' for a list of commands.");
       }
