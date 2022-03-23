@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-const date = "Monday 3/21";
+const date = "Wednesday 3/23";
 
 const dailyMessage = `Trying to get on multiple bot listing sites...`;
 
