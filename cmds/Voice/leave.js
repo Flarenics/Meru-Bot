@@ -18,6 +18,7 @@ module.exports = {
       if (connection) {
          try {
             connection.destroy();
+            message.client.queue.delete(message.guildId);
          } catch (err) {
             console.log(err);
          }
