@@ -1,6 +1,7 @@
 const dotenv = require("dotenv").config();
 const { MessageEmbed } = require("discord.js");
 const https = require("https");
+const axios = require("axios");
 
 module.exports = {
    name: "danbooru",
