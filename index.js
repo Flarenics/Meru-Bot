@@ -37,7 +37,7 @@ client.once("ready", () => {
    console.log(
       `Logged in as ${client.user.tag} and Listening to ${client.guilds.cache.size} servers `
    );
-   client.user.setActivity(`in client.guilds.cache.size} servers`, {
+   client.user.setActivity(`in ${client.guilds.cache.size} servers`, {
       type: "PLAYING",
    });
    client.user.setStatus("dnd");
