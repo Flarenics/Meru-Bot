@@ -34,7 +34,7 @@ module.exports = {
                   : args[0].toUpperCase()
             } | ${args.slice(1, args.length).join(" ")} | @Meru Bot help`
          );
-         message.client.user.setActivity(args.slice(1, args.length).join(" ") + '| meru help', {
+         message.client.user.setActivity(args.slice(1, args.length).join(" ") + ' | meru help', {
             type: args[0].toUpperCase(),
          });
          message.reply({
