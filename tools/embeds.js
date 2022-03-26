@@ -18,7 +18,7 @@ function errorEmbed(title, text) {
          "https://cdn.discordapp.com/attachments/954775942750937178/955450378856574996/sign-error-icon.png?size=4096"
       )
       .setColor("#b73739")
-      .addFields({ name: "\u200b", value: text })
+      .addFields({ name: text, value: "\u200b" })
       .setFooter({
          text: "Meru ",
          iconURL:
