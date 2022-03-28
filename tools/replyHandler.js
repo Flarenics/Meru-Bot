@@ -37,10 +37,12 @@ async function replyHandler(
          messageObject.reply({
             embeds: [embeds.answerEmbed(replyTitle, replyContent)],
          });
+         break;
       case "error":
          messageObject.reply({
             embeds: [embeds.errorEmbed(replyTitle, replyContent)],
          });
+         break;
 
       default:
    }
