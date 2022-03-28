@@ -59,7 +59,10 @@ for (const file of cmdFiles) {
 client.on("messageCreate", (message) => {
    // Return if message is from bot or a DM
    if (message.author.bot) return;
-   if (message.channel.type === "DM") {
+   if (
+      message.channel.type === "DM" &&
+      !message.author.id === "612440265327771678"
+   ) {
       message.reply("You can not run commands in a DM!");
       return;
    }
