@@ -87,7 +87,7 @@ module.exports = {
             message.reply("<a:meruroller:955481121255219270>").then((msg) => {
                setTimeout(function () {
                   msg.edit(emoji);
-               }, Math.floor(Math.random() * 7000));
+               }, 4000);
             });
          } catch (err) {
             console.log(err);
@@ -98,3 +98,5 @@ module.exports = {
          );
    },
 };
+
+//Math.floor(Math.random() * 7000)
