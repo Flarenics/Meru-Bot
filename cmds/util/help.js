@@ -18,18 +18,18 @@ const helpEmbed = new MessageEmbed()
          name: "Ping",
          value: "Displays current ping to Meru.",
       },
-      //  {
-      //     name: "Roll",
-      //     value: "Spin for a random emoji!",
-      //  },
-      {
-         name: "Daily",
-         value: "Gives a daily message.",
-      },
-      // {
-      //    name: "Activity",
-      //    value: "Sets the bot's activity to your message.",
-      // },
+        {
+           name: "Roll",
+           value: "Spin for a random emoji!",
+        },
+      //{
+      //   name: "Daily",
+      //   value: "Gives a daily message.",
+     // },
+       {
+          name: "Activity",
+          value: "Sets the bot's activity to your message. [DEV COMMAND]",
+       },
       {
          name: "Vibecheck",
          value: "Checks your vibe.",
