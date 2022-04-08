@@ -12,7 +12,7 @@ function embedGenerator(title, text) {
 }
 
 module.exports = {
-   name: "vibecheck",
+   name: "vibe",
    aliases: [],
    async execute(message) {
       let vibeRating = Math.round(Math.random() * (10 - 1) + 1);
