@@ -23,8 +23,7 @@ module.exports = {
          embeds: [embedGenerator('Error', 'Command Disabled.')]})
    } else {
       message.reply({
-         embeds: [embedGenerator(date, dailyMessage)],
-      }
+         embeds: [embedGenerator(date, dailyMessage)]},
       });
    },
 };
