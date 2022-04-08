@@ -18,9 +18,13 @@ function embedGenerator(title, text) {
 module.exports = {
    name: "daily",
    aliases: [],
-   async execute(message) {
+   async execute(message) { if (!message.author.id === '612440265327771678') {
+      message.reply({
+         embeds: [embedGenerator('Error', 'Command Disabled.')]})
+   } else {
       message.reply({
          embeds: [embedGenerator(date, dailyMessage)],
+      }
       });
    },
 };
