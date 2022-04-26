@@ -84,7 +84,7 @@ module.exports = {
       );
       if (channelPermissions.has(Permissions.FLAGS.USE_EXTERNAL_EMOJIS)) {
          try {
-            message.reply("<a:meruroller:955481121255219270>").then((msg) => {
+            message.reply("Rolling...").then((msg) => {
                setTimeout(function () {
                   msg.edit(emoji);
                }, 4000);
